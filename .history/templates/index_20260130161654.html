@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>郵便番号検索アプリ</title>
+</head>
+<body>
+    <h1>郵便番号検索</h1>
+
+    <form action="/zip" method="get">
+        <label>郵便番号：</label>
+        <input type="text" name="zipcode" placeholder="例：9012301">
+        <button type="submit">検索</button>
+    </form>
+
+    <hr>
+
+    <h1>住所から郵便番号検索</h1>
+
+    <form action="/address" method="get">
+        <label>住所キーワード：</label>
+        <input type="text" name="keyword" placeholder="例：今帰仁村">
+        <button type="submit">検索</button>
+    </form>
+</body>
+</html>

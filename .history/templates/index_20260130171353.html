@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>郵便番号検索アプリ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <h1>郵便番号から住所を検索</h1>
+
+    <form action="/" method="get">
+        <label>郵便番号：</label>
+        <input type="text" name="zipcode" placeholder="例：9012301">
+        <button type="submit">検索</button>
+    </form>
+
+    {% if zip_result %}
+        <p><strong>結果：</strong> {{ zip_result }}</p>
+    {% endif %}
+
+    <hr>
+
+    <h1>住所から郵便番号を検索</h1>
+
+    <form action="/" method="get">
+        <label>住所キーワード：</label>
+        <input type="text" name="keyword" placeholder="例：今帰仁村">
+        <button type="submit">検索</button>
+    </form>
+
+    {% if address_result %}
+        <p><strong>結果：</strong><br>{{ address_result|safe }}</p>
+    {% endif %}
+</body>
+</html>
